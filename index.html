@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tic Tac Toe</h1>
+
+      <div class="menu" id="menu">
+        <button onclick="startGame('pc')">🎮 Single Player</button>
+        <button onclick="startGame('player')">👥 Multi Player</button>
+        <button onclick="exitGame()">🚪 Exit</button>
+      </div>
+
+      <div class="game hidden" id="game">
+        <h2 id="status">Player 1 : X</h2>
+        <div class="board" id="board"></div>
+        <div class="controls">
+          <button onclick="restartGame()">🔄 Restart</button>
+          <button onclick="backToMenu()">⬅ Back to Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

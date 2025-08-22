@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  width: 400px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #ff4c4c;
+  text-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  background: transparent;
+  color: #00ffe0;
+  border: 2px solid #00ffe0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 5px #00ffe0;
+}
+button:hover {
+  background: #00ffe0;
+  color: #121212;
+  box-shadow: 0 0 15px #00ffe0, 0 0 30px #00ffe0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+.cell {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ff4c4c;
+  font-size: 2.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  color: #fff;
+}
+.cell:hover {
+  background: rgba(255, 76, 76, 0.3);
+  box-shadow: 0 0 10px #ff4c4c, 0 0 20px #ff4c4c;
+}
+.cell.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.cell.win {
+  background: #00ffe0;
+  color: #121212 !important;
+  box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0; }
+  to   { box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0; }
+}
+
+.hidden {
+  display: none;
+}
+
+#status {
+  font-size: 1.3em;
+  margin: 15px 0;
+  color: #ffcc00;
+  text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00;
+}
+
+.controls button {
+  margin-top: 10px;
+}
